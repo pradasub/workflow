@@ -2,6 +2,7 @@ import numpy as np
 def describe():
     return print(
         f'Change all other categories to object type\n'
+        f'Change all the bool types to int\n'
         f'data = cat_to_object(data)\n'
     )
 

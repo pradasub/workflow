@@ -1,12 +1,15 @@
 import pandas as pd
 from sklearn.metrics import classification_report, confusion_matrix  
+
 def describe():
+    
     return print(
-        f'This module will give a dataframe of precision, recall, accuracy and confusion matrix for binary variable\n'
+        f'This module will give a dataframe of precision, recall, accuracy\n'
+        f'and confusion matrix for binary variable\n'
         f'pass in test and prediction of the binary variable\n'
         f'TODO: if other than binary variable\n'
-        f'scikit_results(y_test, y_pred) -> will just print classification report and confusion matrix from sklearn\n'
-        f'prec_recall, confusion_matrix = metrics(y_test, y_pred)'
+        f'scikit_results(y_test, y_pred) -> gives classification report and confusion matrix from sklearn\n'
+        f'prec_recall, confusion_matrix = metrics(y_test, y_pred) -> this is customized'
     )
 
 def metrics(y_test, y_pred):
@@ -51,6 +54,7 @@ def metrics(y_test, y_pred):
 
 def scikit_results(y_test, y_pred):
     y_test, y_pred
+    
     print(confusion_matrix(y_test, y_pred)) 
     print('\n\n')
     print(classification_report(y_test, y_pred))         

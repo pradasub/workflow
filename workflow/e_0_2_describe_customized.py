@@ -6,9 +6,8 @@ def describe():
     )
 
 def describe_data(data):
-#    import pandas as pd
     desc_dict = {}
-    # define dict with keys
+    # define dict with keys as columns
     for i in data.columns:
         desc_dict[i] = []
     # check the type for the columns

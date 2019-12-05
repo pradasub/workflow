@@ -4,9 +4,11 @@ def describe():
         f'If the data is categorical or Object or has less than the number of unique \n'
         f'values (default=10) specified by user, mode is used to replace the NA.\n'
         f'If the data is numeric (int or float) and has more than the number of\n'
-        f'unique values (default = 10) specified by user, a user specified "mean" or "median" is used to replace the NA.\n'
-        f'data = simple_replace_null(data, num_unique=10, mean_or_median="median") -> give data and specify number of unique values\n'
-        f'null_assert(data) run this to see if there are nulls in the data'
+        f'unique values (default = 10) specified by user,\n'
+        f'a user specified "mean" or "median" is used to replace the NA.\n'
+        f'data = simple_replace_null(data, num_unique=10, mean_or_median="median")\n'
+        f'-> give data and specify number of unique values\n'
+        f'null_assert(data) -> run this to see if there are nulls in the data\n'
     )
 
 def simple_replace_null(data, num_unique=10, mean_or_median="median"):
@@ -18,15 +20,23 @@ def simple_replace_null(data, num_unique=10, mean_or_median="median"):
 
     for i in reqd_columns:
         n_unique = data[i].nunique()
+        
         if n_unique <= num_unique:    # replace the categorical variable by mode
             data[i].fillna(data[i].mode()[0], inplace=True)
+            
         if n_unique > num_unique and data[i].dtype != "O" and mean_or_median == "median":
             data[i].fillna(data[i].median(), inplace=True)
+            
         if n_unique > num_unique and data[i].dtype != "O" and mean_or_median == "mean":
             data[i].fillna(data[i].mean(), inplace=True)
+            
         if n_unique > num_unique and data[i].dtype == "O":
             cols_not_filled.append(i)
-    print(f"{cols_not_filled} were not filled: exception - NULL categorical variable with more than {num_unique} categories")       
+            
+    print(
+        f"{cols_not_filled} were not filled: exception - NULL categorical variable with more than {num_unique} categories"
+    )  
+    
     return data
 
 def null_assert(data):

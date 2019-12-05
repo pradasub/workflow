@@ -28,6 +28,7 @@ def describe():
         f'A lot of the times we deal with imbalanced data\n'
         f'This module is for quick access to the imblearn library\n'
         f'MAKE SURE TO SAVE X_train AND y_train BEFORE RUNNING THROUGH THE SAMPLING ALGORITHM\n\n\n'
+        f'This is to run the accuracy in train dataset and make sure we are not overfitting'
         f'sampling(X_train, y_train, sampling_method) -> choose sampling method from one below\n\n'
         f'from imblearn.combine import SMOTEENN\n'
         f'from imblearn.combine import SMOTETomek\n\n\n'

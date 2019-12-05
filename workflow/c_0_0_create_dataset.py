@@ -15,10 +15,6 @@ def describe():
         f'scikitlearn_data(data="load_boston") -> load_iris for iris data etc.\n'
     )
 
-# This is somehow not working says-no module named bs4
-#def available_sns_data():
-#    return sns.get_dataset_names()
-
 
 def sns_data(data='tips'):
     return sns.load_dataset(data)
