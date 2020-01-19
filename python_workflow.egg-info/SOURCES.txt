@@ -3,6 +3,7 @@ python_workflow.egg-info/PKG-INFO
 python_workflow.egg-info/SOURCES.txt
 python_workflow.egg-info/dependency_links.txt
 python_workflow.egg-info/not-zip-safe
+python_workflow.egg-info/requires.txt
 python_workflow.egg-info/top_level.txt
 workflow/__init__.py
 workflow/c_0_0_create_dataset.py

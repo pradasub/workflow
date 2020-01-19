@@ -12,11 +12,9 @@ setup(name='python_workflow',
           'numpy',
           'seaborn',
           'sklearn',
-          'collections',
           'imblearn',
           'keras',
           'matplotlib',
           'lime',
-          'lime.lime_tabular',
-          'treeinterpreter']
+          'treeinterpreter'],
       zip_safe=False)
