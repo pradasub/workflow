@@ -7,7 +7,7 @@ def describe():
         f'This module is for interpreting the machine learning model through LIME\n'
         f'Local Interpretable Model-Agnostic Explanations\n'
         f'This is to interpret every observation using lime interpretation\n'
-        f'exp, plot = explain_instances(X_train,y_train,X_test,model,
+        f'exp, plot = explain_instances(X_train,y_train,X_test,model',
         f'response_field,class_names, index_of_instance, num_features=5): ->\n'
         f'index_of_instance is as it is defined, however this is iloc not loc\n'
     )
