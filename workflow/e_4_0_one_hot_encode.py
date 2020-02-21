@@ -5,7 +5,8 @@ def describe():
         f'Drop categorical variables that have more than the specified number of unique values (default =10).\n'
         f'TODO: use scikitlearn for more vectorized version---\n'
         f'data = one_hot_encoding(data, response, n_unique=10, names_specified_to_drop=None, drop_firt=True) ->\n' 
-        f'data, response variable,drop n_unique\n'
+        f'data, response variable,n_unique, if drop_first = False\n'
+        f'specify names to be dropped which will the names of the categories to be dropped\n'
     )
 def drop_useless_categories(data,response, n_unique):
     check_columns = list(data.columns)
