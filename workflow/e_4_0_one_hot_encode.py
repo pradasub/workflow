@@ -3,7 +3,9 @@ def describe():
     return print(
         f'This module is to one hot encode the data.\n'
         f'Drop categorical variables that have more than the specified number of unique values (default =10).\n'
-        f'data = one_hot_encoding(data, response, n_unique=10) -> data, response variable,drop n_unique\n'
+        f'TODO: use scikitlearn for more vectorized version---\n'
+        f'data = one_hot_encoding(data, response, n_unique=10, names_specified_to_drop=None, drop_firt=True) ->\n' 
+        f'data, response variable,drop n_unique\n'
     )
 def drop_useless_categories(data,response, n_unique):
     check_columns = list(data.columns)
@@ -20,7 +22,7 @@ def drop_useless_categories(data,response, n_unique):
     print(f"{dropped_columns} are the columns that are dropped from the data")
     return data        
 
-def one_hot_encoding(data, response, n_unique=10):
+def one_hot_encoding(data, response, n_unique=10, names_specified_to_drop=None, drop_first=True):
     data = drop_useless_categories(data, response, n_unique)
     used_columns = list(data.columns)
     used_columns.remove(response)
@@ -28,8 +30,11 @@ def one_hot_encoding(data, response, n_unique=10):
     for i in used_columns:
         
         if data[i].nunique() <= n_unique:
-            dums =  pd.get_dummies(data[i], drop_first=True)
+            dums =  pd.get_dummies(data[i], drop_first=drop_first)
             data = pd.concat([data, dums], axis = 1)
             data.drop([i], axis =1, inplace = True)
+
+            if drop_first == False:
+                data.drop(names_specified_to_drop, axis= 1, inplace=True)
             
     return data

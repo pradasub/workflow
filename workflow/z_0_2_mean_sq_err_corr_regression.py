@@ -38,7 +38,7 @@ def prediction_metrics(y_test, y_pred):
     
     return pd.DataFrame({'Values':all_metrics}, index=index)
 
-def corr_polt(y_test, y_pred):
+def corr_plot(y_test, y_pred):
     
     fig, ax = plt.subplots()
     ax.plot(y_test, y_pred, 'o', mfc = 'none')
